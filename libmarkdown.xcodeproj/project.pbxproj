@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		2B1CDA0320E1F12A00387F55 /* libmarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA0220E1F12A00387F55 /* libmarkdown.swift */; };
+		2B1CDA2920E1F18500387F55 /* wstring_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA0C20E1F18500387F55 /* wstring_utils.cpp */; };
+		2B1CDA2A20E1F18500387F55 /* native-lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA0D20E1F18500387F55 /* native-lib.cpp */; };
+		2B1CDA2B20E1F18500387F55 /* Markup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA1620E1F18500387F55 /* Markup.cpp */; };
+		2B1CDA2C20E1F18500387F55 /* Content.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA1720E1F18500387F55 /* Content.cpp */; };
+		2B1CDA2D20E1F18500387F55 /* Paragraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA1820E1F18500387F55 /* Paragraph.cpp */; };
+		2B1CDA2E20E1F18500387F55 /* BodyModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA1A20E1F18500387F55 /* BodyModel.cpp */; };
+		2B1CDA2F20E1F18500387F55 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA1B20E1F18500387F55 /* Parser.cpp */; };
+		2B1CDA3020E1F18500387F55 /* Style.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA1F20E1F18500387F55 /* Style.cpp */; };
+		2B1CDA3120E1F18500387F55 /* Json2MarkdownParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2020E1F18500387F55 /* Json2MarkdownParser.cpp */; };
+		2B1CDA3220E1F18500387F55 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2120E1F18500387F55 /* Block.cpp */; };
+		2B1CDA3320E1F18500387F55 /* Doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2420E1F18500387F55 /* Doc.cpp */; };
+		2B1CDA3420E1F18500387F55 /* Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2720E1F18500387F55 /* Wrapper.mm */; };
+		2B1CDA3520E1F18500387F55 /* WrapperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */; };
+		2B1CDA3720E1F1D600387F55 /* WrapperSwift.swift in Headers */ = {isa = PBXBuildFile; fileRef = 2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +39,35 @@
 /* Begin PBXFileReference section */
 		2B1CD9FF20E1F12A00387F55 /* liblibmarkdown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibmarkdown.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B1CDA0220E1F12A00387F55 /* libmarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libmarkdown.swift; sourceTree = "<group>"; };
+		2B1CDA0920E1F18400387F55 /* libmarkdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libmarkdown-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B1CDA0A20E1F18500387F55 /* Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrapper.h; sourceTree = "<group>"; };
+		2B1CDA0C20E1F18500387F55 /* wstring_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wstring_utils.cpp; sourceTree = "<group>"; };
+		2B1CDA0D20E1F18500387F55 /* native-lib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "native-lib.cpp"; sourceTree = "<group>"; };
+		2B1CDA0F20E1F18500387F55 /* GenerateId.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GenerateId.hpp; sourceTree = "<group>"; };
+		2B1CDA1020E1F18500387F55 /* Paragraph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Paragraph.hpp; sourceTree = "<group>"; };
+		2B1CDA1120E1F18500387F55 /* BodyModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BodyModel.hpp; sourceTree = "<group>"; };
+		2B1CDA1220E1F18500387F55 /* Parser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Parser.hpp; sourceTree = "<group>"; };
+		2B1CDA1320E1F18500387F55 /* Rule.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rule.hpp; sourceTree = "<group>"; };
+		2B1CDA1420E1F18500387F55 /* Markup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Markup.hpp; sourceTree = "<group>"; };
+		2B1CDA1520E1F18500387F55 /* Content.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Content.hpp; sourceTree = "<group>"; };
+		2B1CDA1620E1F18500387F55 /* Markup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Markup.cpp; sourceTree = "<group>"; };
+		2B1CDA1720E1F18500387F55 /* Content.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Content.cpp; sourceTree = "<group>"; };
+		2B1CDA1820E1F18500387F55 /* Paragraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paragraph.cpp; sourceTree = "<group>"; };
+		2B1CDA1920E1F18500387F55 /* BlockType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockType.hpp; sourceTree = "<group>"; };
+		2B1CDA1A20E1F18500387F55 /* BodyModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BodyModel.cpp; sourceTree = "<group>"; };
+		2B1CDA1B20E1F18500387F55 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
+		2B1CDA1C20E1F18500387F55 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		2B1CDA1E20E1F18500387F55 /* Doc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Doc.hpp; sourceTree = "<group>"; };
+		2B1CDA1F20E1F18500387F55 /* Style.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Style.cpp; sourceTree = "<group>"; };
+		2B1CDA2020E1F18500387F55 /* Json2MarkdownParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Json2MarkdownParser.cpp; sourceTree = "<group>"; };
+		2B1CDA2120E1F18500387F55 /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		2B1CDA2220E1F18500387F55 /* Json2MarkdownParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Json2MarkdownParser.hpp; sourceTree = "<group>"; };
+		2B1CDA2320E1F18500387F55 /* Block.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Block.hpp; sourceTree = "<group>"; };
+		2B1CDA2420E1F18500387F55 /* Doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Doc.cpp; sourceTree = "<group>"; };
+		2B1CDA2520E1F18500387F55 /* Style.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Style.hpp; sourceTree = "<group>"; };
+		2B1CDA2620E1F18500387F55 /* wstring_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wstring_utils.hpp; sourceTree = "<group>"; };
+		2B1CDA2720E1F18500387F55 /* Wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Wrapper.mm; sourceTree = "<group>"; };
+		2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +101,75 @@
 			isa = PBXGroup;
 			children = (
 				2B1CDA0220E1F12A00387F55 /* libmarkdown.swift */,
+				2B1CDA0B20E1F18500387F55 /* cpp */,
+				2B1CDA0A20E1F18500387F55 /* Wrapper.h */,
+				2B1CDA2720E1F18500387F55 /* Wrapper.mm */,
+				2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */,
+				2B1CDA0920E1F18400387F55 /* libmarkdown-Bridging-Header.h */,
 			);
 			path = libmarkdown;
 			sourceTree = "<group>";
 		};
+		2B1CDA0B20E1F18500387F55 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				2B1CDA0C20E1F18500387F55 /* wstring_utils.cpp */,
+				2B1CDA0D20E1F18500387F55 /* native-lib.cpp */,
+				2B1CDA0E20E1F18500387F55 /* markdown2json */,
+				2B1CDA1C20E1F18500387F55 /* json.h */,
+				2B1CDA1D20E1F18500387F55 /* json2markdown */,
+				2B1CDA2620E1F18500387F55 /* wstring_utils.hpp */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		2B1CDA0E20E1F18500387F55 /* markdown2json */ = {
+			isa = PBXGroup;
+			children = (
+				2B1CDA0F20E1F18500387F55 /* GenerateId.hpp */,
+				2B1CDA1020E1F18500387F55 /* Paragraph.hpp */,
+				2B1CDA1120E1F18500387F55 /* BodyModel.hpp */,
+				2B1CDA1220E1F18500387F55 /* Parser.hpp */,
+				2B1CDA1320E1F18500387F55 /* Rule.hpp */,
+				2B1CDA1420E1F18500387F55 /* Markup.hpp */,
+				2B1CDA1520E1F18500387F55 /* Content.hpp */,
+				2B1CDA1620E1F18500387F55 /* Markup.cpp */,
+				2B1CDA1720E1F18500387F55 /* Content.cpp */,
+				2B1CDA1820E1F18500387F55 /* Paragraph.cpp */,
+				2B1CDA1920E1F18500387F55 /* BlockType.hpp */,
+				2B1CDA1A20E1F18500387F55 /* BodyModel.cpp */,
+				2B1CDA1B20E1F18500387F55 /* Parser.cpp */,
+			);
+			path = markdown2json;
+			sourceTree = "<group>";
+		};
+		2B1CDA1D20E1F18500387F55 /* json2markdown */ = {
+			isa = PBXGroup;
+			children = (
+				2B1CDA1E20E1F18500387F55 /* Doc.hpp */,
+				2B1CDA1F20E1F18500387F55 /* Style.cpp */,
+				2B1CDA2020E1F18500387F55 /* Json2MarkdownParser.cpp */,
+				2B1CDA2120E1F18500387F55 /* Block.cpp */,
+				2B1CDA2220E1F18500387F55 /* Json2MarkdownParser.hpp */,
+				2B1CDA2320E1F18500387F55 /* Block.hpp */,
+				2B1CDA2420E1F18500387F55 /* Doc.cpp */,
+				2B1CDA2520E1F18500387F55 /* Style.hpp */,
+			);
+			path = json2markdown;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2B1CDA3620E1F1C500387F55 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B1CDA3720E1F1D600387F55 /* WrapperSwift.swift in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2B1CD9FE20E1F12A00387F55 /* libmarkdown */ = {
@@ -72,6 +179,7 @@
 				2B1CD9FB20E1F12A00387F55 /* Sources */,
 				2B1CD9FC20E1F12A00387F55 /* Frameworks */,
 				2B1CD9FD20E1F12A00387F55 /* CopyFiles */,
+				2B1CDA3620E1F1C500387F55 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -94,6 +202,7 @@
 				TargetAttributes = {
 					2B1CD9FE20E1F12A00387F55 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -119,7 +228,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1CDA2F20E1F18500387F55 /* Parser.cpp in Sources */,
+				2B1CDA2920E1F18500387F55 /* wstring_utils.cpp in Sources */,
 				2B1CDA0320E1F12A00387F55 /* libmarkdown.swift in Sources */,
+				2B1CDA2E20E1F18500387F55 /* BodyModel.cpp in Sources */,
+				2B1CDA2D20E1F18500387F55 /* Paragraph.cpp in Sources */,
+				2B1CDA3520E1F18500387F55 /* WrapperSwift.swift in Sources */,
+				2B1CDA2A20E1F18500387F55 /* native-lib.cpp in Sources */,
+				2B1CDA3320E1F18500387F55 /* Doc.cpp in Sources */,
+				2B1CDA3120E1F18500387F55 /* Json2MarkdownParser.cpp in Sources */,
+				2B1CDA2C20E1F18500387F55 /* Content.cpp in Sources */,
+				2B1CDA3420E1F18500387F55 /* Wrapper.mm in Sources */,
+				2B1CDA2B20E1F18500387F55 /* Markup.cpp in Sources */,
+				2B1CDA3220E1F18500387F55 /* Block.cpp in Sources */,
+				2B1CDA3020E1F18500387F55 /* Style.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -231,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -243,10 +365,18 @@
 		2B1CDA0720E1F12A00387F55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "libmarkdown/libmarkdown-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -255,10 +385,17 @@
 		2B1CDA0820E1F12A00387F55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "libmarkdown/libmarkdown-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
