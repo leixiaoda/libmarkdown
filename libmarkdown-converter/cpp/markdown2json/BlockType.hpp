@@ -7,7 +7,7 @@
 
 #include <string>
 
-namespace Sunset {
+namespace Sunrise {
 
     enum BlockType {
         doc,

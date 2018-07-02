@@ -6,9 +6,9 @@
 #include "../wstring_utils.hpp"
 #include "Block.hpp"
 
-std::string Sunset::json_to_markdown(std::string json_str)
+std::string Sunrise::json_to_markdown(std::string json_str)
 {
-    std::string markdown_str;
+    std::wstring markdown_str;
 
     json doc = json::parse(json_str);
     std::vector<Block> blocks = doc.at("blocks").get<std::vector<Block>>();
@@ -21,102 +21,83 @@ std::string Sunset::json_to_markdown(std::string json_str)
             block = blocks.at(i);
             if (H1 == block.type)
             {
-                markdown_str = markdown_str + "# " + block.text + "\n";
+                markdown_str += Sunrise::string2wstring("# " + block.text + "\n");
             }
             else if (H2 == block.type)
             {
-                markdown_str = markdown_str + "## " + block.text + "\n";
+                markdown_str += Sunrise::string2wstring("## " + block.text + "\n");
             }
             else if (H3 == block.type)
             {
-                markdown_str = markdown_str + "### " + block.text + "\n";
+                markdown_str += Sunrise::string2wstring("### " + block.text + "\n");
             }
             else if (PARAGRAPH == block.type)
             {
                 if (block.styles.size() <= 0)
                 {
-                    markdown_str = markdown_str + block.text + "\n";
+                    markdown_str += Sunrise::string2wstring(block.text + "\n");
                 }
                 else
                 {
-                    std::wstring wstr = Sunset::string2wstring(block.text);
+                    std::wstring wstr = Sunrise::string2wstring(block.text);
 
-                    // sort the styles
-                    std::sort(block.styles.begin(), block.styles.end());
-//                    for (int ii = 0 ; ii < block.styles.size(); ii++) {
-//                        __android_log_print(ANDROID_LOG_DEBUG, "json2markdown", "style.start = %d, style.end = %d",
-//                                            block.styles[ii].start, block.styles[ii].end);
-//                    }
-                    Style style;
-                    // previous style's end index
-                    int previous_index = 0;
-                    int j = 0;
-                    for (; j < block.styles.size(); j++)
+                    std::vector<InsertPoint> insert_points;
+                    for (int ii = 0; ii < block.styles.size(); ++ii)
                     {
-                        style = block.styles.at(j);
-                        markdown_str += Sunset::wstring2string(
-                                wstr.substr(previous_index, block.styles.at(j).start - previous_index));
-                        if (STR_ITALIC == style.style)
+                        InsertPoint point;
+                        point.index = block.styles[ii].start;
+                        point.isStart = true;
+                        point.type = block.styles[ii].style;
+                        insert_points.push_back(point);
+
+                        InsertPoint point_end;
+                        point_end.index = block.styles[ii].end;
+                        point_end.isStart = false;
+                        point_end.type = block.styles[ii].style;
+                        point_end.link = block.styles[ii].link;
+                        insert_points.push_back(point_end);
+                    }
+                    std::sort(insert_points.begin(), insert_points.end());
+
+                    for (int j = insert_points.size() - 1; j >= 0; --j)
+                    {
+                        InsertPoint point = insert_points.at(j);
+                        if (STR_ITALIC == point.type)
                         {
-                            markdown_str = markdown_str + "*" + Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start))
-                                    + "*";
+                            wstr.insert(point.index, L"*");
                         }
-                        else if (STR_BOLD == style.style)
+                        else if (STR_BOLD == point.type)
                         {
-                            markdown_str = markdown_str + "**" + Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start))
-                                           + "**";
+                            wstr.insert(point.index, L"**");
                         }
-                        else if (STR_LINK == style.style)
+                        else if (STR_LINK == point.type)
                         {
-                            markdown_str = markdown_str + "[" + Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start))
-                                           + "](" + block.styles.at(j).link + ")";
+                            if (point.isStart)
+                            {
+                                wstr.insert(point.index, L"[");
+                            }
+                            else
+                            {
+                                std::wstring tmp = L"](" + Sunrise::string2wstring(point.link) + L")";
+                                wstr.insert(point.index, tmp);
+                            }
                         }
-                        else if (STR_CODE == style.style)
+                        else if (STR_CODE == point.type)
                         {
-                            markdown_str = markdown_str + "`" + Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start))
-                                           + "`";
+                            wstr.insert(point.index, L"`");
                         }
-                        else if (STR_UNDERLINE == style.style)
+                        else if (STR_STRIKE_THROUGH == point.type)
                         {
-                            markdown_str += Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start));
+                            wstr.insert(point.index, L"~~");
                         }
-                        else if (STR_STRIKE_THROUGH == style.style)
-                        {
-                            markdown_str = markdown_str + "~~" + Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start))
-                                           + "~~";
-                        }
-                        else
-                        {
-                            markdown_str += Sunset::wstring2string(
-                                    wstr.substr(block.styles.at(j).start,
-                                                block.styles.at(j).end - block.styles.at(j).start));
-                        }
-                        previous_index = style.end;
                     }
 
-                    // concatenates the substring after the last style block
-                    int start = block.styles.at(j - 1).end;
-                    int len = wstr.length() - start;
-                    markdown_str = markdown_str + Sunset::wstring2string(
-                            wstr.substr(start, len))
-                                   + "\n";
+                    markdown_str += wstr;
                 }
             }
             else if (UNORDERED_LIST == block.type)
             {
-                markdown_str = markdown_str + "* " + block.text + "\n";
+                markdown_str += Sunrise::string2wstring("* " + block.text + "\n");
             }
             else if (ORDERED_LIST == block.type)
             {
@@ -128,22 +109,25 @@ std::string Sunset::json_to_markdown(std::string json_str)
                 {
                     ++ordered_list_index;
                 }
-                markdown_str = markdown_str + std::to_string(ordered_list_index) + ". " + block.text + "\n";
+                markdown_str += Sunrise::string2wstring(std::to_string(ordered_list_index) + ". " + block.text + "\n");
             }
             else if (IMAGE == block.type)
             {
-                markdown_str = markdown_str + "![Image](" + block.uri + ")" + "\n";
+                markdown_str += Sunrise::string2wstring("![Image](" + block.uri + ")" + "\n");
             }
             else if (QUOTE == block.type)
             {
-                markdown_str = markdown_str + "> " + block.text + "\n";
+                markdown_str += Sunrise::string2wstring("> " + block.text + "\n");
             }
             else
             {
-                markdown_str += block.text;
+                markdown_str += Sunrise::string2wstring(block.text);
             }
         }
     }
 
-    return markdown_str;
+    std::string ret = Sunrise::wstring2string(markdown_str);
+
+    return ret;
 }
+

@@ -1,9 +1,9 @@
 
 #include "Markup.hpp"
 
-using Sunset::Markup;
+using Sunrise::Markup;
 
-std::string Sunset::getMarkupTypeString(int type) {
+std::string Sunrise::getMarkupTypeString(int type) {
     std::string ret = "";
     switch (type) {
         case ITALIC:
@@ -28,7 +28,7 @@ std::string Sunset::getMarkupTypeString(int type) {
     return ret;
 }
 
-void Sunset::to_json(json& j, const Markup& m) {
+void Sunrise::to_json(json& j, const Markup& m) {
     j = json{
         {"start", m.start},
         {"end", m.end},
@@ -45,7 +45,7 @@ void Sunset::to_json(json& j, const Markup& m) {
 
 }
 
-void Sunset::from_json(const json& j, Markup& m) {
+void Sunrise::from_json(const json& j, Markup& m) {
     m.start = j.at("start").get<int>();
     m.end = j.at("end").get<int>();
     m.type = j.at("type").get<int>();

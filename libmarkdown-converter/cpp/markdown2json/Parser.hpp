@@ -31,14 +31,16 @@
 #define CODEBLOCK_REGEX "`{3}.*"
 #define BLOCK_QUOTE "^>\\s.+"
 
-namespace Sunset{
+#define TAG_MD_TO_JSON "markdown_to_json"
+
+namespace Sunrise{
 
     class Parser {
     public:
         std::vector<Rule> rules;
         std::map<int, std::regex> regexMap;
         
-        std::vector<Sunset::Content> content;
+        std::vector<Sunrise::Content> content;
         enum StringValue {
             title,
             description,
@@ -72,7 +74,7 @@ namespace Sunset{
             {"layout", layout},
         } {}
 
-        Sunset::Content loadFile(const std::string file);
+        Sunrise::Content loadFile(const std::string file);
         /**
          * @method  {getFileJson} Gets the Json value from a single or multiple files
          * @param   {std::string} file - vector to push any Markdown syntax onto for parsing.
@@ -95,13 +97,13 @@ namespace Sunset{
          * @method {processMarkdown} processes Markdown content.
          * @return {void}
          */
-        void processMarkdown(Sunset::BodyModel& bodyModel, std::vector<std::string> const &lines, int index, int length);
+        void processMarkdown(Sunrise::BodyModel& bodyModel, std::vector<std::string> const &lines, int index, int length);
         
         /**
          * @method {processLine} processes markdown syntax further. Removing bold, italics, etc.
          * @return {void}
          */
-        void processLine(Sunset::Paragraph &paragraph);
+        void processLine(Sunrise::Paragraph &paragraph);
 
         int convertIndex(std::string string, int index);
 

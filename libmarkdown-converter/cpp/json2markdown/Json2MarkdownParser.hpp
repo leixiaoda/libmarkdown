@@ -28,8 +28,22 @@ using namespace nlohmann;
 #define STR_UNDERLINE      "underline"
 #define STR_STRIKE_THROUGH "strikethrough"
 
-namespace Sunset
+#define TAG_JSON_TO_MD "json_to_markdown"
+
+namespace Sunrise
 {
+    struct InsertPoint
+    {
+        int index;
+        bool isStart;
+        std::string type;
+        std::string link;
+
+        bool operator < (const InsertPoint &p)const {
+            return index < p.index;
+        }
+    };
+
     std::string json_to_markdown(std::string json_str);
 
 }

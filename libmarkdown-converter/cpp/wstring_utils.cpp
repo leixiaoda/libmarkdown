@@ -4,7 +4,7 @@
 
 #include "wstring_utils.hpp"
 
-std::string Sunset::wstring2string(const std::wstring& wstr)
+std::string Sunrise::wstring2string(const std::wstring& wstr)
 {
     using convert_typeX = std::codecvt_utf8<wchar_t>;
     std::wstring_convert<convert_typeX, wchar_t> converterX;
@@ -12,7 +12,7 @@ std::string Sunset::wstring2string(const std::wstring& wstr)
     return converterX.to_bytes(wstr);
 }
 
-std::wstring Sunset::string2wstring(const std::string& str)
+std::wstring Sunrise::string2wstring(const std::string& str)
 {
     using convert_typeX = std::codecvt_utf8<wchar_t>;
     std::wstring_convert<convert_typeX, wchar_t> converterX;

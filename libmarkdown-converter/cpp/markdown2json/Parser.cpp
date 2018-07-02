@@ -3,12 +3,12 @@
 #include "GenerateId.hpp"
 #include "../wstring_utils.hpp"
 
-using namespace Sunset;
+using namespace Sunrise;
 
-Sunset::Content Parser::loadFile(std::string file)
+Sunrise::Content Parser::loadFile(std::string file)
 {
-    Sunset::Content fileContent;
-    Sunset::BodyModel bodyModel;
+    Sunrise::Content fileContent;
+    Sunrise::BodyModel bodyModel;
     
     std::vector<std::string> lines;
     std::vector<std::string> YAMLLines;
@@ -38,7 +38,7 @@ json Parser::getFileJson(const std::string file, bool directory) {
     if (!directory)
         return getFileJson(file);
 
-    std::vector<Sunset::Content> contents;
+    std::vector<Sunrise::Content> contents;
     json j;
 
     DIR *dpdf;
@@ -92,7 +92,7 @@ bool Parser::preprocessFile(std::ifstream& myReadFile, std::vector<std::string>&
 }
 
 int Parser::convertIndex(std::string string, int index) {
-    return Sunset::string2wstring(string.substr(0, index)).size();
+    return Sunrise::string2wstring(string.substr(0, index)).size();
 }
 
 int Parser::regex_match(std::string line)
@@ -108,12 +108,12 @@ int Parser::regex_match(std::string line)
     return 0;
 }
 
-void Parser::processMarkdown(Sunset::BodyModel& bodyModel, std::vector<std::string> const &lines, int index, int length)
+void Parser::processMarkdown(Sunrise::BodyModel& bodyModel, std::vector<std::string> const &lines, int index, int length)
 {
     if (index != length)
     {
         std::string line = lines.at(index);
-        Sunset::Paragraph par;
+        Sunrise::Paragraph par;
         int offset = 0;
 
         // iterate through rules until match is found.
@@ -123,7 +123,7 @@ void Parser::processMarkdown(Sunset::BodyModel& bodyModel, std::vector<std::stri
             if (std::regex_match(line, rule.reg))
             { // match
 
-                par = { "TextBlock_" + Sunset::random_string(13), line, rule.id, static_cast<int>(bodyModel.paragraphs.size()), {} };
+                par = { "Block_" + Sunrise::random_string(32), line, rule.id, static_cast<int>(bodyModel.paragraphs.size()), {} };
 
                 if (rule.multiline && rule.fenced)
                 {
@@ -159,11 +159,11 @@ void Parser::processMarkdown(Sunset::BodyModel& bodyModel, std::vector<std::stri
     }
 }
 
-void Parser::processLine(Sunset::Paragraph &paragraph)
+void Parser::processLine(Sunrise::Paragraph &paragraph)
 {
     int removeIndex = 0;
-    std::stack<Sunset::Markup> stack;
-    Sunset::Markup markup;
+    std::stack<Sunrise::Markup> stack;
+    Sunrise::Markup markup;
     
     switch (paragraph.type)
     {
@@ -267,7 +267,7 @@ void Parser::processLine(Sunset::Paragraph &paragraph)
     }
 }
 
-std::string Sunset::markdown_to_json(std::string markdown_str)
+std::string Sunrise::markdown_to_json(std::string markdown_str)
 {
     std::vector<std::string> lines;
 
@@ -288,10 +288,10 @@ std::string Sunset::markdown_to_json(std::string markdown_str)
         }
     }
 
-    auto parser = new Sunset::Parser();
-    Sunset::Content fileContent;
-    Sunset::BodyModel bodyModel;
-    parser->processMarkdown(bodyModel, lines, 0, lines.size());
+    Parser parser;
+    Sunrise::Content fileContent;
+    Sunrise::BodyModel bodyModel;
+    parser.processMarkdown(bodyModel, lines, 0, lines.size());
     fileContent.blocks = bodyModel;
     json j = fileContent;
     std::string ret = j.dump(4);

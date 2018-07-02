@@ -4,7 +4,7 @@
 
 #include "Block.hpp"
 
-void Sunset::from_json(const json& j, Block& b)
+void Sunrise::from_json(const json& j, Block& b)
 {
     b.id = j.at("id").get<std::string>();
     b.index = j.at("index").get<int>();

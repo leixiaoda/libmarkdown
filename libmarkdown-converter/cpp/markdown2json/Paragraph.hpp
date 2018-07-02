@@ -15,13 +15,13 @@
 
 using nlohmann::json;
 
-namespace Sunset {
+namespace Sunrise {
     struct Paragraph {
         std::string id;
         std::string text;
         int type;
         int index;
-        std::vector<Sunset::Markup> markups;
+        std::vector<Sunrise::Markup> markups;
         std::string url;
     };
     void to_json(json& j, const Paragraph& p);

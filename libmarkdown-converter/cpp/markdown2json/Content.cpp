@@ -1,9 +1,9 @@
 
 #include "Content.hpp"
 
-using Sunset::Content;
+using Sunrise::Content;
 
-void Sunset::to_json(json &j, const Content& c) {
+void Sunrise::to_json(json &j, const Content& c) {
     j = json{
         {"id", c.id},
         {"folderId", c.folderId},

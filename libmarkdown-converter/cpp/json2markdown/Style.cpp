@@ -4,7 +4,7 @@
 
 #include "Style.hpp"
 
-void Sunset::from_json(const json& j, Style& s)
+void Sunrise::from_json(const json& j, Style& s)
 {
     s.start = j.at("start").get<int>();
     s.end = j.at("end").get<int>();

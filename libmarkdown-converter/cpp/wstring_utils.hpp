@@ -9,7 +9,7 @@
 #include <codecvt>
 #include <locale>
 
-namespace Sunset
+namespace Sunrise
 {
     std::wstring string2wstring(const std::string& str);
     std::string wstring2string(const std::wstring& wstr);

@@ -4,7 +4,7 @@
 
 #include "Doc.hpp"
 
-void Sunset::from_json(const json& j, Doc& d)
+void Sunrise::from_json(const json& j, Doc& d)
 {
     d.blocks = j.at("blocks").get<std::vector<Block>>();
 }

@@ -15,7 +15,7 @@ using nlohmann::json;
 #define UNDERLINE 5
 #define STRIKE_THROUGH 6
 
-namespace Sunset {
+namespace Sunrise {
     struct Markup {
         int start;
         int end;

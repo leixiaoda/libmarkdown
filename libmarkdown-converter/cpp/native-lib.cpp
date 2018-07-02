@@ -5,6 +5,7 @@
 //#include "markdown2json/Parser.hpp"
 //#include "wstring_utils.hpp"
 //#include "json2markdown/Json2MarkdownParser.hpp"
+//#include <android/log.h>
 //
 //extern "C"
 //JNIEXPORT jstring JNICALL
@@ -12,7 +13,7 @@
 //                                                                           jstring markdown_) {
 //    const char *markdown = env->GetStringUTFChars(markdown_, 0);
 //
-//    std::string ret = Sunset::markdown_to_json(markdown);
+//    std::string ret = Sunrise::markdown_to_json(markdown);
 //
 //    env->ReleaseStringUTFChars(markdown_, markdown);
 //
@@ -25,7 +26,7 @@
 //                                                                           jstring jsonStr_) {
 //    const char *jsonStr = env->GetStringUTFChars(jsonStr_, 0);
 //
-//    std::string ret = Sunset::json_to_markdown(jsonStr);
+//    std::string ret = Sunrise::json_to_markdown(jsonStr);
 //
 //    env->ReleaseStringUTFChars(jsonStr_, jsonStr);
 //

@@ -10,7 +10,7 @@
 
 using nlohmann::json;
 
-namespace Sunset
+namespace Sunrise
 {
 
     struct Style

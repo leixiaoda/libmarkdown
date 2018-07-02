@@ -8,7 +8,7 @@
 #include <string>
 #include "Block.hpp"
 
-namespace Sunset
+namespace Sunrise
 {
     struct Doc
     {

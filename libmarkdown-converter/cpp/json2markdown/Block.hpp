@@ -8,7 +8,7 @@
 #include <string>
 #include "Style.hpp"
 
-namespace Sunset
+namespace Sunrise
 {
     struct Block
     {

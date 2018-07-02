@@ -7,9 +7,9 @@
 #include "BlockType.hpp"
 #include "Paragraph.hpp"
 
-using Sunset::Paragraph;
+using Sunrise::Paragraph;
 
-std::string Sunset::getBlockTypeString(int type) {
+std::string Sunrise::getBlockTypeString(int type) {
     std::string ret = "";
     switch (type) {
         case doc:
@@ -44,7 +44,7 @@ std::string Sunset::getBlockTypeString(int type) {
     return ret;
 }
 
-void Sunset::to_json(json& j, const Paragraph& p) {
+void Sunrise::to_json(json& j, const Paragraph& p) {
     std::string typeStr = getBlockTypeString(p.type);
     if (p.markups.size() > 0) {
         j = json{
@@ -74,10 +74,10 @@ void Sunset::to_json(json& j, const Paragraph& p) {
     }
 }
 
-void Sunset::from_json(const json& j, Paragraph& p) {
+void Sunrise::from_json(const json& j, Paragraph& p) {
     p.id = j.at("id").get<std::string>();
     p.text = j.at("text").get<std::string>();
     p.type = j.at("type").get<int>();
-    p.markups = j.at("markups").get<std::vector<Sunset::Markup>>();
+    p.markups = j.at("markups").get<std::vector<Sunrise::Markup>>();
 }
 

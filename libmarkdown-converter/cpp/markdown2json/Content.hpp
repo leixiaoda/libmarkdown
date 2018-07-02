@@ -11,7 +11,7 @@
 
 using nlohmann::json;
 
-namespace Sunset {
+namespace Sunrise {
     class Content {
     public:
         std::string id;
@@ -20,7 +20,7 @@ namespace Sunset {
         long lastModify = 0;
         std::string version;
         std::string author;
-        Sunset::BodyModel blocks;
+        Sunrise::BodyModel blocks;
     };
     void to_json(json& j, const Content& c);
     void from_json(const json& j, Content& p);
