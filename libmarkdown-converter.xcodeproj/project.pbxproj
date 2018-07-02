@@ -20,8 +20,7 @@
 		2B1CDA3220E1F18500387F55 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2120E1F18500387F55 /* Block.cpp */; };
 		2B1CDA3320E1F18500387F55 /* Doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2420E1F18500387F55 /* Doc.cpp */; };
 		2B1CDA3420E1F18500387F55 /* Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2720E1F18500387F55 /* Wrapper.mm */; };
-		2B1CDA3520E1F18500387F55 /* WrapperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */; };
-		2B1CDA3720E1F1D600387F55 /* WrapperSwift.swift in Headers */ = {isa = PBXBuildFile; fileRef = 2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */; };
+		2B29EBE120EA2EEA0011AEA1 /* ConverterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B29EBE020EA2EEA0011AEA1 /* ConverterWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,7 +66,7 @@
 		2B1CDA2520E1F18500387F55 /* Style.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Style.hpp; sourceTree = "<group>"; };
 		2B1CDA2620E1F18500387F55 /* wstring_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wstring_utils.hpp; sourceTree = "<group>"; };
 		2B1CDA2720E1F18500387F55 /* Wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Wrapper.mm; sourceTree = "<group>"; };
-		2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperSwift.swift; sourceTree = "<group>"; };
+		2B29EBE020EA2EEA0011AEA1 /* ConverterWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +103,7 @@
 				2B1CDA0B20E1F18500387F55 /* cpp */,
 				2B1CDA0A20E1F18500387F55 /* Wrapper.h */,
 				2B1CDA2720E1F18500387F55 /* Wrapper.mm */,
-				2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */,
+				2B29EBE020EA2EEA0011AEA1 /* ConverterWrapper.swift */,
 				2B1CDA0920E1F18400387F55 /* libmarkdown-Bridging-Header.h */,
 			);
 			path = "libmarkdown-converter";
@@ -165,7 +164,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B1CDA3720E1F1D600387F55 /* WrapperSwift.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +231,12 @@
 				2B1CDA0320E1F12A00387F55 /* libmarkdown.swift in Sources */,
 				2B1CDA2E20E1F18500387F55 /* BodyModel.cpp in Sources */,
 				2B1CDA2D20E1F18500387F55 /* Paragraph.cpp in Sources */,
-				2B1CDA3520E1F18500387F55 /* WrapperSwift.swift in Sources */,
 				2B1CDA2A20E1F18500387F55 /* native-lib.cpp in Sources */,
 				2B1CDA3320E1F18500387F55 /* Doc.cpp in Sources */,
 				2B1CDA3120E1F18500387F55 /* Json2MarkdownParser.cpp in Sources */,
 				2B1CDA2C20E1F18500387F55 /* Content.cpp in Sources */,
 				2B1CDA3420E1F18500387F55 /* Wrapper.mm in Sources */,
+				2B29EBE120EA2EEA0011AEA1 /* ConverterWrapper.swift in Sources */,
 				2B1CDA2B20E1F18500387F55 /* Markup.cpp in Sources */,
 				2B1CDA3220E1F18500387F55 /* Block.cpp in Sources */,
 				2B1CDA3020E1F18500387F55 /* Style.cpp in Sources */,

@@ -11,5 +11,6 @@
 @interface Wrapper: NSObject
 
 - (NSString *)markdownToJson:(NSString *)json;
+- (NSString *)jsonToMarkdown:(NSString *)json;
 
 @end

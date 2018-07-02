@@ -10,15 +10,6 @@
 #import "Wrapper.h"
 #import "Parser.hpp"
 
-//extern "C" {
-//    - (NSString *)markdownToJson:(NSString *)json {
-//        Sunset::markdown
-//
-//
-//        return @""
-//    }
-//}
-
 @implementation Wrapper
 - (NSString *)markdownToJson:(NSString *)markdown {
     std::string json = Sunset::markdown_to_json(std::string([markdown UTF8String]));
