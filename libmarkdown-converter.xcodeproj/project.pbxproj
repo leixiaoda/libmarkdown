@@ -37,7 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2B1CD9FF20E1F12A00387F55 /* liblibmarkdown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibmarkdown.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B1CD9FF20E1F12A00387F55 /* liblibmarkdown-converter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblibmarkdown-converter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B1CDA0220E1F12A00387F55 /* libmarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libmarkdown.swift; sourceTree = "<group>"; };
 		2B1CDA0920E1F18400387F55 /* libmarkdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libmarkdown-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B1CDA0A20E1F18500387F55 /* Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrapper.h; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		2B1CD9F620E1F12A00387F55 = {
 			isa = PBXGroup;
 			children = (
-				2B1CDA0120E1F12A00387F55 /* libmarkdown */,
+				2B1CDA0120E1F12A00387F55 /* libmarkdown-converter */,
 				2B1CDA0020E1F12A00387F55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,12 +92,12 @@
 		2B1CDA0020E1F12A00387F55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B1CD9FF20E1F12A00387F55 /* liblibmarkdown.a */,
+				2B1CD9FF20E1F12A00387F55 /* liblibmarkdown-converter.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B1CDA0120E1F12A00387F55 /* libmarkdown */ = {
+		2B1CDA0120E1F12A00387F55 /* libmarkdown-converter */ = {
 			isa = PBXGroup;
 			children = (
 				2B1CDA0220E1F12A00387F55 /* libmarkdown.swift */,
@@ -107,7 +107,7 @@
 				2B1CDA2820E1F18500387F55 /* WrapperSwift.swift */,
 				2B1CDA0920E1F18400387F55 /* libmarkdown-Bridging-Header.h */,
 			);
-			path = libmarkdown;
+			path = "libmarkdown-converter";
 			sourceTree = "<group>";
 		};
 		2B1CDA0B20E1F18500387F55 /* cpp */ = {
@@ -172,9 +172,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2B1CD9FE20E1F12A00387F55 /* libmarkdown */ = {
+		2B1CD9FE20E1F12A00387F55 /* libmarkdown-converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B1CDA0620E1F12A00387F55 /* Build configuration list for PBXNativeTarget "libmarkdown" */;
+			buildConfigurationList = 2B1CDA0620E1F12A00387F55 /* Build configuration list for PBXNativeTarget "libmarkdown-converter" */;
 			buildPhases = (
 				2B1CD9FB20E1F12A00387F55 /* Sources */,
 				2B1CD9FC20E1F12A00387F55 /* Frameworks */,
@@ -185,9 +185,9 @@
 			);
 			dependencies = (
 			);
-			name = libmarkdown;
+			name = "libmarkdown-converter";
 			productName = libmarkdown;
-			productReference = 2B1CD9FF20E1F12A00387F55 /* liblibmarkdown.a */;
+			productReference = 2B1CD9FF20E1F12A00387F55 /* liblibmarkdown-converter.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B1CD9FA20E1F12A00387F55 /* Build configuration list for PBXProject "libmarkdown" */;
+			buildConfigurationList = 2B1CD9FA20E1F12A00387F55 /* Build configuration list for PBXProject "libmarkdown-converter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -218,7 +218,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B1CD9FE20E1F12A00387F55 /* libmarkdown */,
+				2B1CD9FE20E1F12A00387F55 /* libmarkdown-converter */,
 			);
 		};
 /* End PBXProject section */
@@ -375,7 +375,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "libmarkdown/libmarkdown-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "libmarkdown-converter/libmarkdown-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -395,7 +395,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "libmarkdown/libmarkdown-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "libmarkdown-converter/libmarkdown-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -404,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B1CD9FA20E1F12A00387F55 /* Build configuration list for PBXProject "libmarkdown" */ = {
+		2B1CD9FA20E1F12A00387F55 /* Build configuration list for PBXProject "libmarkdown-converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B1CDA0420E1F12A00387F55 /* Debug */,
@@ -413,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B1CDA0620E1F12A00387F55 /* Build configuration list for PBXNativeTarget "libmarkdown" */ = {
+		2B1CDA0620E1F12A00387F55 /* Build configuration list for PBXNativeTarget "libmarkdown-converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B1CDA0720E1F12A00387F55 /* Debug */,
